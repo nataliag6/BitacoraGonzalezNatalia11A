@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitácora Natalia Gonzalez</title>
-    <link rel="icon" type="image/png" href="Recursos/img/logocapouilliezrojo .png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Recursos/img/logocapouilliezrojo.png">
+    
+    <!-- MEJORA 3: Fuente moderna desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Estilos Generales */
@@ -15,9 +21,10 @@
         html, body {
             height: 100%;
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f7f9fc;
-            color: #333;
+            /* MEJORA 3: Aplicando la fuente Poppins */
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f0f4f8; /* Fondo grisáceo muy suave para contraste */
+            color: #2d3748;
         }
 
         body {
@@ -26,71 +33,92 @@
             text-align: center;
         }
 
-        /* Encabezado */
+        /* MEJORA 1: Encabezado con Degradado y Sombra Sutil */
         header {
-            padding: 25px 20px;
-            background-color: #9ab7ed;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 40px 20px;
+            /* Degradado de azul a blanco muy sutil */
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
         header h1 {
             margin: 0;
             color: white;
-            font-size: 2.2rem;
-            text-shadow: 0 0 5px #fff, 0 0 10px #b026ff, 0 0 20px #b026ff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            /* Manteniendo tu efecto de neón original, es icónico */
+            text-shadow: 0 0 5px #fff, 0 0 10px #b026ff, 0 0 20px #b026ff, 0 0 30px #b026ff;
+            letter-spacing: -1px;
         }
 
         /* Contenido Principal (Estrecho y centrado) */
         main {
             flex: 1;
-            padding: 20px;
+            padding: 30px 20px;
             max-width: 780px; /* Ancho ajustado para tarjetas más estrechas */
             width: 90%;
             margin: 0 auto;
         }
 
         .subtitulo-seccion {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin: 20px 0 10px 0;
-            font-weight: bold;
+            font-size: 1.4rem;
+            color: #1a202c;
+            margin: 20px 0 30px 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Tarjeta de cada Semana */
+        /* Tarjeta de cada Semana Mejorada */
         .semana {
             background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            padding: 28px;
-            margin: 25px 0;
-            border-left: 8px solid #b026ff;
+            border-radius: 20px; /* Bordes más redondeados */
+            /* Sombra más profunda y suave para efecto flotante */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 35px;
+            margin: 30px 0;
+            border-left: 10px solid #b026ff; /* Borde más grueso */
             text-align: left;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease; /* Transición para todas las propiedades */
         }
 
+        /* Interacción al pasar el ratón por la tarjeta */
         .semana:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(176, 38, 255, 0.1); /* Sombra teñida de morado */
         }
 
         .semana h2 {
             margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #b026ff;
+            margin-bottom: 15px;
         }
 
         .semana p {
-            line-height: 1.6;
+            line-height: 1.7;
             color: #4a5568;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
-        /* Envoltorio para PDF y Video */
+        /* MEJORA 2: Envoltorio multimedia con Interacción */
         .media-wrapper {
-            margin-top: 20px;
-            border-radius: 12px;
+            margin-top: 25px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
-            background: #000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid transparent; /* Borde invisible inicial */
+            background: #1a202c; /* Negro mate */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Interacción multimedia */
+        .semana:hover .media-wrapper {
+            border-color: #b026ff; /* El borde se ilumina en morado */
+            box-shadow: 0 8px 25px rgba(176, 38, 255, 0.2);
         }
 
         .media-wrapper video {
@@ -99,21 +127,43 @@
             height: auto;
         }
 
-        .nota-pdf {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: #718096;
+        /* Estilo para el PDF incrustado */
+        .media-wrapper embed {
+            display: block;
+            border: none;
         }
 
-        /* Pie de página */
+        .nota-pdf {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #718096;
+            background-color: #edf2f7;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* MEJORA 4: Pie de página refinado */
         footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
-            border-top: 6px solid pink;
-            background-color: lavenderblush;
-            font-weight: 500;
+            padding: 25px 50px;
+            /* Quitamos el borde rosa grueso y ponemos una sombra suave */
+            background-color: white;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.03);
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 40px;
+        }
+        
+        /* Mantenemos el acento rosa pero más sutil */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background-color: pink;
         }
 
         footer img {
@@ -121,7 +171,7 @@
         }
 
         footer img:hover {
-            transform: scale(1.15);
+            transform: scale(1.1) rotate(2deg); /* Un pequeño giro para dar dinamismo */
         }
     </style>
 </head>
@@ -137,7 +187,7 @@
 
         <!-- Semana 01 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 01: Primeros pasos</h2>
+            <h2>Semana 01: Primeros pasos</h2>
             <p>En esta entrada aprenderás cómo se organiza un proyecto web desde cero. Veremos para qué sirve cada carpeta y cómo crear tu primer archivo index.</p>
             
             <div class="media-wrapper">
@@ -145,13 +195,13 @@
             </div>
             
             <p class="nota-pdf">
-                <i>Si no puedes ver el archivo, asegúrate de que el PDF esté en la misma carpeta que este código.</i>
+                <i>💡 Si no puedes ver el archivo, asegúrate de que el PDF esté en la misma carpeta que este código.</i>
             </p>
         </div>
 
         <!-- Semana 02 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 02: Armando la estructura</h2>
+            <h2>Semana 02: Armando la estructura</h2>
             <p>Aquí aprenderás a usar Tinkercad y a usar los distintos elementos básicos de la programación.</p>
             
             <div class="media-wrapper">
@@ -164,7 +214,7 @@
 
         <!-- Semana 03 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 03: Poniéndole color</h2>
+            <h2>Semana 03: Poniéndole color</h2>
             <p>En esta semana aprenderás a usar componentes de robótica y programación para que todo se vea mucho más ordenado y bonito.</p>
             
             <div class="media-wrapper">
@@ -177,7 +227,7 @@
 
         <!-- Semana 04 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 04: Simulación en Tinkercad</h2>
+            <h2>Semana 04: Simulación en Tinkercad</h2>
             <p>En esta semana utilizamos la plataforma Tinkercad para diseñar y simular de forma digital nuestro circuito antes de armarlo en físico. Configuramos las conexiones del Arduino, la protoboard y programamos el código para controlar el encendido secuencial de los LEDs.</p>
             
             <div class="media-wrapper">
@@ -190,7 +240,7 @@
 
         <!-- Semana 05 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 05: Simulación de semáforo</h2>
+            <h2>Semana 05: Simulación de semáforo</h2>
             <p>En esta semana utilizamos la plataforma Tinkercad para diseñar y simular de forma digital nuestro circuito antes de armarlo en físico. Configuramos las conexiones del Arduino, la protoboard y programamos el código para controlar el encendido secuencial de los LEDs.</p>
             
             <div class="media-wrapper">
@@ -203,7 +253,7 @@
 
         <!-- Semana 06 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 06: Sensor Ultrasónico de Distancia</h2>
+            <h2>Semana 06: Sensor Ultrasónico de Distancia</h2>
             <p>En esta sesión diseñamos un sistema de proximidad digital en Tinkercad. Integramos un sensor ultrasónico de distancia con luces LED (verde, amarilla y roja) y un zumbador piezoeléctrico. Programamos el Arduino para que, conforme un objeto se acerque al sensor, se activen alarmas visuales y sonoras de advertencia según la distancia detectada.</p>
             
             <div class="media-wrapper">
@@ -216,7 +266,7 @@
 
         <!-- Semana 07 -->
         <div class="semana">
-            <h2 style="color: #b026ff;">Semana 07: Sensor de Movimiento PIR</h2>
+            <h2>Semana 07: Sensor de Movimiento PIR</h2>
             <p>En esta semana exploramos el funcionamiento de un sensor PIR (Passive Infrared) en Tinkercad para la detección de presencia o movimiento. Aprendimos a realizar las conexiones de señal, poder y tierra hacia el Arduino, y programamos las instrucciones para que un indicador LED se encienda automáticamente al registrar actividad en el área protegida.</p>
             
             <div class="media-wrapper">
@@ -229,9 +279,9 @@
 
     </main>
 
-    <footer>
+    <footer style="position: relative;">
         <span>@natigonzalezzr</span>
-        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="25" alt="Logo Colegio">
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="30" alt="Logo Colegio">
     </footer>
 
 </body>
