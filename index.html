@@ -1,166 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitácora Natalia Gonzalez</title>
     <link rel="icon" type="image/png" href="Recursos/img/logocapouilliezrojo .png">
-<style>
-    /*CSS-Diseño*/
-    html, body {
-        height:100% ;
-        margin:0 ;
-        font-family:Arial, sans-serif ;
+    
+    <style>
+        /* Estilos Generales */
+        * {
+            box-sizing: border-box;
         }
-        body{
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        body {
             display: flex;
-            flex-direction:column ;
+            flex-direction: column;
             text-align: center;
         }
+
+        /* Encabezado */
         header {
-            padding:20x ;
-            background-color: rgb(154, 183, 237);
-            color:darkblue
+            padding: 25px 20px;
+            background-color: #9ab7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        main{
-            flex:1 ;
-            padding: 20px;
-            max-width:1200px ;
-            margin:0 auto ;
-        }
-        footer{
-            display:flex;
-            justify-content:space-between ;
-            align-items: center;
-            padding:15px 50px ;
-            border-top: 10px solid pink;
-            background-color: lavenderblush;
-        }
+
         header h1 {
+            margin: 0;
             color: white;
-            text-shadow: 0 0 5px #fff, 0 0 10px #b026ff, 0 0 20px #b026ff, 0 0 40px #b026ff;
+            font-size: 2.2rem;
+            text-shadow: 0 0 5px #fff, 0 0 10px #b026ff, 0 0 20px #b026ff;
         }
-        footer img {
-            transition: transform 0.3s ease; /* Hace que el zoom sea suave */
+
+        /* Contenido Principal (Estrecho y centrado) */
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 780px; /* Ancho ajustado para tarjetas más estrechas */
+            width: 90%;
+            margin: 0 auto;
         }
+
+        .subtitulo-seccion {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+
+        /* Tarjeta de cada Semana */
+        .semana {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            padding: 28px;
+            margin: 25px 0;
+            border-left: 8px solid #b026ff;
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .semana:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .semana h2 {
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .semana p {
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* Envoltorio para PDF y Video */
+        .media-wrapper {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .media-wrapper video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .nota-pdf {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* Pie de página */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-top: 6px solid pink;
+            background-color: lavenderblush;
+            font-weight: 500;
+        }
+
         footer img {
             transition: transform 0.3s ease;
         }
 
         footer img:hover {
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
-        .semana {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin: 20px 0;
-            border-left: 8px solid #b026ff;
-            text-align: left;
-        }
-        }
-</style>
+    </style>
 </head>
 
-
 <body>
+
     <header>
-<h1>Bitácora segunda y tercera unidad</h1>
+        <h1>Bitácora segunda y tercera unidad</h1>
     </header>
+
     <main>
-    <h4>Contenido de la página WEB</h4>   
-    </main
-    <main>
+        <div class="subtitulo-seccion">Contenido de la página WEB</div>
+
+        <!-- Semana 01 -->
         <div class="semana">
             <h2 style="color: #b026ff;">Semana 01: Primeros pasos</h2>
             <p>En esta entrada aprenderás cómo se organiza un proyecto web desde cero. Veremos para qué sirve cada carpeta y cómo crear tu primer archivo index.</p>
             
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd;">
+            <div class="media-wrapper">
                 <embed src="Recursos/semana1.pdf" type="application/pdf" width="100%" height="500px" />
             </div>
             
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+            <p class="nota-pdf">
                 <i>Si no puedes ver el archivo, asegúrate de que el PDF esté en la misma carpeta que este código.</i>
             </p>
         </div>
 
+        <!-- Semana 02 -->
         <div class="semana">
             <h2 style="color: #b026ff;">Semana 02: Armando la estructura</h2>
-            <p> Aqui aprenderas a usar thinkercad y a usar los distintos elementos básicos de la programación.</p>
+            <p>Aquí aprenderás a usar Tinkercad y a usar los distintos elementos básicos de la programación.</p>
             
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/primer_video.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
 
-      <div class="semana">
+        <!-- Semana 03 -->
+        <div class="semana">
             <h2 style="color: #b026ff;">Semana 03: Poniéndole color</h2>
-            <p>En esta semana aprenderás a usar componentes de robótica y programación que todo se vea mucho más ordenado y bonito.</p>
+            <p>En esta semana aprenderás a usar componentes de robótica y programación para que todo se vea mucho más ordenado y bonito.</p>
             
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/natalia_gonzalez_videoled.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
 
-<div class="semana">
+        <!-- Semana 04 -->
+        <div class="semana">
             <h2 style="color: #b026ff;">Semana 04: Simulación en Tinkercad</h2>
             <p>En esta semana utilizamos la plataforma Tinkercad para diseñar y simular de forma digital nuestro circuito antes de armarlo en físico. Configuramos las conexiones del Arduino, la protoboard y programamos el código para controlar el encendido secuencial de los LEDs.</p>
             
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/Video_Arduino_Led3.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
 
-<div class="semana">
-            <h2 style="color: #b026ff;">Semana 05: Simulación de semaforo </h2>
+        <!-- Semana 05 -->
+        <div class="semana">
+            <h2 style="color: #b026ff;">Semana 05: Simulación de semáforo</h2>
             <p>En esta semana utilizamos la plataforma Tinkercad para diseñar y simular de forma digital nuestro circuito antes de armarlo en físico. Configuramos las conexiones del Arduino, la protoboard y programamos el código para controlar el encendido secuencial de los LEDs.</p>
             
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/video_led_semaforo.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
-<div class="semana">
+
+        <!-- Semana 06 -->
+        <div class="semana">
             <h2 style="color: #b026ff;">Semana 06: Sensor Ultrasónico de Distancia</h2>
             <p>En esta sesión diseñamos un sistema de proximidad digital en Tinkercad. Integramos un sensor ultrasónico de distancia con luces LED (verde, amarilla y roja) y un zumbador piezoeléctrico. Programamos el Arduino para que, conforme un objeto se acerque al sensor, se activen alarmas visuales y sonoras de advertencia según la distancia detectada.</p>
             
-            <!-- Bloque del nuevo video del Sensor Ultrasónico -->
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/sensor_ultrasonico.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
-<div class="semana">
+
+        <!-- Semana 07 -->
+        <div class="semana">
             <h2 style="color: #b026ff;">Semana 07: Sensor de Movimiento PIR</h2>
             <p>En esta semana exploramos el funcionamiento de un sensor PIR (Passive Infrared) en Tinkercad para la detección de presencia o movimiento. Aprendimos a realizar las conexiones de señal, poder y tierra hacia el Arduino, y programamos las instrucciones para que un indicador LED se encienda automáticamente al registrar actividad en el área protegida.</p>
             
-            <!-- Bloque listo para el archivo MP4 convertido -->
-            <div style="margin-top: 20px; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                <video width="100%" height="auto" controls>
+            <div class="media-wrapper">
+                <video controls>
                     <source src="Recursos/sensor_pir.mp4" type="video/mp4">
                     Tu navegador no soporta el formato de video.
                 </video>
             </div>
         </div>
 
+    </main>
 
-    </main>>
     <footer>
-<span>@natigonzalezzr</span>
-    <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="25" width="100">
+        <span>@natigonzalezzr</span>
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="25" alt="Logo Colegio">
+    </footer>
+
 </body>
 </html>
